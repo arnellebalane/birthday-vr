@@ -70,3 +70,26 @@ for (var i = 0; i < TEXT.length; i++) {
     }
     cursor.x += letter.data[0].length + 1;
 }
+
+
+// dynamically render images grid
+imageGrids.forEach(function(imageGrid) {
+    imageGrid.images.forEach(function(img, i) {
+        var image = document.createElement('a-image');
+        scene.appendChild(image);
+
+        image.setAttribute('src', img.source);
+        image.setAttribute('width', imageGrid.size);
+        image.setAttribute('height', imageGrid.size);
+        image.setAttribute('rotation', [
+            imageGrid.rotation.x,
+            imageGrid.rotation.y,
+            0
+        ].join(' '));
+        image.setAttribute('position', [
+            imageGrid.center.x + img.offsets.x,
+            imageGrid.center.y + img.offsets.y + 1.6,
+            imageGrid.center.z + img.offsets.z
+        ].join(' '));
+    });
+});
