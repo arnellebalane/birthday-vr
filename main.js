@@ -1,5 +1,5 @@
 var TEXT = 'happy\nbirthday\njedijulia';
-var PIXEL_SIZE = 0.5;
+var PIXEL_SIZE = 0.1;
 var LINE_HEIGHT = 9;
 var MOBILE = 'ontouchstart' in window;
 
@@ -32,7 +32,7 @@ for (var i = 0; i < TEXT.length; i++) {
 // calculate offsets in order to center the rendered message
 var offsets = {
     x: -dimensions.width / 2 * PIXEL_SIZE,
-    y: dimensions.height / 2 * PIXEL_SIZE + 3.6
+    y: dimensions.height / 2 * PIXEL_SIZE + 2
 };
 
 
@@ -64,7 +64,7 @@ for (var i = 0; i < TEXT.length; i++) {
             pixel.setAttribute('position', [
                 (cursor.x * PIXEL_SIZE) + (column * PIXEL_SIZE) + offsets.x,
                 (cursor.y * PIXEL_SIZE) + ((-row * PIXEL_SIZE) - (letter.top * PIXEL_SIZE)) + offsets.y,
-                -10
+                -2.5
             ].join(' '));
         }
     }
