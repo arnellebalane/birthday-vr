@@ -7,6 +7,34 @@ var segments = [];
 generateAudioVisualizationSegments(scene);
 
 
+var audio = new Audio();
+audio.src = 'audio/happy-birthday.mp3';
+audio.autoplay = true;
+audio.loop = true;
+
+var audioCtx = new AudioContext();
+var source = audioCtx.createMediaElementSource(audio);
+var analyser = audioCtx.createAnalyser();
+
+source.connect(analyser);
+analyser.connect(audioCtx.destination);
+
+var timeDomainData = new Uint8Array(analyser.fftSize);
+var audioDataIndexInterval = Math.floor(analyser.fftSize / SEGMENTS_COUNT);
+
+var frameTimestamp = new Date();
+(function visualize() {
+    requestAnimationFrame(visualize);
+    analyser.getByteTimeDomainData(timeDomainData);
+
+    segments.forEach(function(segment, i) {
+        var data = timeDomainData[i * audioDataIndexInterval] - 128;
+        segment.setAttribute('height', Math.max(0, data / 10));
+    });
+})();
+
+
+
 function generateAudioVisualizationSegments(container) {
     for (var i = 0; i < SEGMENTS_COUNT; i++) {
         var segment = generateAudioVisualizationSegment(i);
