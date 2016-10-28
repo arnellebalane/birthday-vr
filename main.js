@@ -1,4 +1,5 @@
 var TEXT = 'happy\nbirthday\njedijulia';
+var TEXT_COLOR = '#9C27B0';
 var PIXEL_SIZE = 0.1;
 var LINE_HEIGHT = 9;
 var MOBILE = 'ontouchstart' in window;
@@ -60,7 +61,7 @@ for (var i = 0; i < TEXT.length; i++) {
             pixel.setAttribute('width', PIXEL_SIZE);
             pixel.setAttribute('height', PIXEL_SIZE);
             pixel.setAttribute('depth', PIXEL_SIZE);
-            pixel.setAttribute('color', '#ff0000');
+            pixel.setAttribute('color', TEXT_COLOR);
             pixel.setAttribute('position', [
                 (cursor.x * PIXEL_SIZE) + (column * PIXEL_SIZE) + offsets.x,
                 (cursor.y * PIXEL_SIZE) + ((-row * PIXEL_SIZE) - (letter.top * PIXEL_SIZE)) + offsets.y,
