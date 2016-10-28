@@ -1,13 +1,18 @@
-var TEXT = 'abcdefghijklmnopqrstuvwxyz';
+var TEXT = 'happy\nbirthday\njulia';
 var PIXEL_SIZE = 0.5;
+var LINE_HEIGHT = 9;
 
 var scene = document.querySelector('a-scene');
-var cursor = 0;
+var cursor = { x: 0, y: 0 };
 
 
 for (var i = 0; i < TEXT.length; i++) {
     var character = TEXT.charAt(i);
-    if (!letters.hasOwnProperty(character)) {
+    if (character === '\n') {
+        cursor.x = 0;
+        cursor.y -= LINE_HEIGHT + 1;
+        continue;
+    } else if (!letters.hasOwnProperty(character)) {
         continue;
     }
     var letter = letters[character];
@@ -24,12 +29,12 @@ for (var i = 0; i < TEXT.length; i++) {
             pixel.setAttribute('depth', PIXEL_SIZE);
             pixel.setAttribute('color', '#ff0000');
             pixel.setAttribute('position', [
-                (cursor * PIXEL_SIZE) + (column * PIXEL_SIZE) - 60,
-                (-row * PIXEL_SIZE) - (letter.top * PIXEL_SIZE) + 3,
+                (cursor.x * PIXEL_SIZE) + (column * PIXEL_SIZE) - 5,
+                (cursor.y * PIXEL_SIZE) + ((-row * PIXEL_SIZE) - (letter.top * PIXEL_SIZE)),
                 -7
             ].join(' '));
             scene.appendChild(pixel);
         }
     }
-    cursor += letter.data[0].length + 1;
+    cursor.x += letter.data[0].length + 1;
 }
