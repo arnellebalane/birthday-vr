@@ -8,5 +8,3 @@ images/image-06.jpg filter=lfs diff=lfs merge=lfs -text
 images/image-07.jpg filter=lfs diff=lfs merge=lfs -text
 images/image-08.jpg filter=lfs diff=lfs merge=lfs -text
 images/image-09.jpg filter=lfs diff=lfs merge=lfs -text
-images/image-10.jpg filter=lfs diff=lfs merge=lfs -text
-images/image-11.jpg filter=lfs diff=lfs merge=lfs -text
