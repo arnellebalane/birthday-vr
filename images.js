@@ -91,39 +91,39 @@ var imageGrids = [
         size: 3,
         images: [
             {
-                source: 'images/image-01.jpg',
+                source: 'images/image-19.jpg',
                 offsets: { z: -3, y: -3, x: 0 }
             },
             {
-                source: 'images/image-02.jpg',
+                source: 'images/image-20.jpg',
                 offsets: { z: 0, y: -3, x: 0 }
             },
             {
-                source: 'images/image-03.jpg',
+                source: 'images/image-21.jpg',
                 offsets: { z: 3, y: -3, x: 0 }
             },
             {
-                source: 'images/image-04.jpg',
+                source: 'images/image-22.jpg',
                 offsets: { z: -3, y: 0, x: 0 }
             },
             {
-                source: 'images/image-05.jpg',
+                source: 'images/image-23.jpg',
                 offsets: { z: 0, y: 0, x: 0 }
             },
             {
-                source: 'images/image-06.jpg',
+                source: 'images/image-24.jpg',
                 offsets: { z: 3, y: 0, x: 0 }
             },
             {
-                source: 'images/image-07.jpg',
+                source: 'images/image-25.jpg',
                 offsets: { z: -3, y: 3, x: 0 }
             },
             {
-                source: 'images/image-08.jpg',
+                source: 'images/image-26.jpg',
                 offsets: { z: 0, y: 3, x: 0 }
             },
             {
-                source: 'images/image-09.jpg',
+                source: 'images/image-27.jpg',
                 offsets: { z: 3, y: 3, x: 0 }
             },
         ]
