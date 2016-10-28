@@ -2,6 +2,7 @@ var SEGMENTS_COUNT = 72;
 var VISUALIZATION_RADIUS = 5;
 
 var scene = document.querySelector('a-scene');
+var segments = [];
 
 generateAudioVisualizationSegments(scene);
 
@@ -9,6 +10,7 @@ generateAudioVisualizationSegments(scene);
 function generateAudioVisualizationSegments(container) {
     for (var i = 0; i < SEGMENTS_COUNT; i++) {
         var segment = generateAudioVisualizationSegment(i);
+        segments.push(segment);
         scene.appendChild(segment);
     }
 }
